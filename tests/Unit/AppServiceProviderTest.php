@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
-use ReflectionClass;
 use Tests\TestCase;
 
 uses(TestCase::class, RefreshDatabase::class);
@@ -74,7 +73,7 @@ test('bootRoute method configures api rate limiter', function () {
   expect($limit)->toBeInstanceOf(Limit::class);
 
   // Test the limit properties using reflection since they're protected
-  $reflection = new ReflectionClass($limit);
+  $reflection = new \ReflectionClass($limit);
   $maxAttemptsProperty = $reflection->getProperty('maxAttempts');
   $maxAttemptsProperty->setAccessible(true);
   expect($maxAttemptsProperty->getValue($limit))->toBe(60);
