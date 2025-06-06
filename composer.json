@@ -1,0 +1,83 @@
+{
+  "name": "laravel/laravel",
+  "type": "project",
+  "description": "The Laravel Framework.",
+  "keywords": [
+    "framework",
+    "laravel"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "ext-exif": "*",
+    "ext-gd": "*",
+    "fakerphp/faker": "^1.24.1",
+    "guzzlehttp/guzzle": "^7.9.3",
+    "inertiajs/inertia-laravel": "^2.0.2",
+    "laravel/framework": "^12.16.0",
+    "laravel/sanctum": "^4.1.1",
+    "laravel/tinker": "^2.10.1",
+    "league/glide-symfony": "^2.0.1"
+  },
+  "require-dev": {
+    "larastan/larastan": "^3.4.0",
+    "laravel/pail": "^1.2.2",
+    "laravel/sail": "^1.43.1",
+    "mockery/mockery": "^1.6.12",
+    "nunomaduro/collision": "^8.8.0",
+    "pestphp/pest": "^3.8.2",
+    "pestphp/pest-plugin-laravel": "^3.0",
+    "roave/security-advisories": "dev-latest",
+    "spatie/laravel-ignition": "^2.9.1",
+    "zenphp/fixr": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Database\\Factories\\": "database/factories/",
+      "Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ],
+    "post-update-cmd": [
+      "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+    ],
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php artisan key:generate --ansi"
+    ],
+    "compile": [
+      "@php artisan migrate:fresh --seed"
+    ],
+    "test": [
+      "@php artisan config:clear --ansi",
+      "@php artisan test"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "dont-discover": []
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
