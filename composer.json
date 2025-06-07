@@ -17,9 +17,11 @@
     "laravel/framework": "^12.16.0",
     "laravel/sanctum": "^4.1.1",
     "laravel/tinker": "^2.10.1",
-    "league/glide-symfony": "^2.0.1"
+    "league/glide-symfony": "^2.0.1",
+    "zenphp/modulr": "^1.0"
   },
   "require-dev": {
+    "bennett-treptow/laravel-migration-generator": "^4.5",
     "larastan/larastan": "^3.4.0",
     "laravel/pail": "^1.2.2",
     "laravel/sail": "^1.43.1",
@@ -79,5 +81,14 @@
     }
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "path",
+      "url": "modules/*",
+      "options": {
+        "symlink": true
+      }
+    }
+  ]
 }

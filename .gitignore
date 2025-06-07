@@ -18,3 +18,4 @@ Homestead.yaml
 npm-debug.log
 /.idea
 /.vscode
+/storage/migrations
