@@ -12,7 +12,7 @@ return [
   'skippable_views' => env('LMG_SKIPPABLE_VIEWS', ''),
   'sort_mode' => env('LMG_SORT_MODE', 'foreign_key'),
   'definitions' => [
-    'prefer_unsigned_prefix' => env('LMG_PREFER_UNSIGNED_PREFIX', true),
+    'prefer_unsigned_prefix' => env('LMG_PREFER_UNSIGNED_PREFIX', false),
     'use_defined_index_names' => env('LMG_USE_DEFINED_INDEX_NAMES', true),
     'use_defined_foreign_key_index_names' => env('LMG_USE_DEFINED_FOREIGN_KEY_INDEX_NAMES', true),
     'use_defined_unique_key_index_names' => env('LMG_USE_DEFINED_UNIQUE_KEY_INDEX_NAMES', true),
